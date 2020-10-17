@@ -1,0 +1,11 @@
+.card{
+  border-radius: 8px;
+  margin-bottom: 15px;
+  padding: 15px;
+}
+#mission-name{
+  color:#5c6594
+}
+.card-body{
+  padding: 15px 0px 0px 0px;
+}

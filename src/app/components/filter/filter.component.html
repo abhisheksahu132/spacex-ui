@@ -1,0 +1,10 @@
+  <h5><strong>Filters</strong></h5>
+  <div class="filter row" *ngFor="let filter of filters">
+    <div class="filter-header">
+      <strong>{{filter.title}}</strong>
+    </div>
+    <div *ngFor="let value of filter.value" class="col-sm-6 col-6">
+      <button class="btn" [ngClass]="{'btn-selected':appliedFilter[filter.key]==value}" (click)="selectFilter(filter.key,value)">{{value}}</button>
+    </div>
+  </div>
+

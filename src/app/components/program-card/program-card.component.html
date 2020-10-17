@@ -1,0 +1,16 @@
+<div class="card" style="background: #fff">
+  <img style="background: #f5f5f5" [src]="program.links.mission_patch_small" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 id="mission-name"><strong>{{program.mission_name}}#{{program.flight_number}}</strong></h5>
+    <ul class="list-unstyled">
+      <li><strong>Mission Ids:</strong>
+        <ul>
+          <li *ngFor="let id of program.mission_id">{{id}}</li>
+        </ul>
+      </li>
+      <li><strong>Launch Year: </strong> {{program.launch_year}}</li>
+      <li><strong>Successful Launch: </strong> {{program.launch_success?'True':'False'}}</li>
+      <li><strong>Successful Landing: </strong> {{program.rocket.first_stage.cores[0].land_success?'True':'False'}}</li>
+    </ul>
+  </div>
+</div>
