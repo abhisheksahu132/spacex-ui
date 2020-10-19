@@ -1,36 +1,11 @@
-<!--&lt;!&ndash;<router-outlet></router-outlet>&ndash;&gt;-->
-<!--<div class="container-fluid">-->
-<!--<h1 style="font-weight: 700">SpaceX Launch Programs</h1>-->
-<!--<div class="container-fluid">-->
-<!--<div class="row">-->
-<!--<div style="background: #fff" class="filter-container col-md-2">-->
-<!--<h5><strong>Filters</strong></h5>-->
-<!--<div class="launch-year">-->
-<!--<span *ngFor="let year of launchYears">-->
-<!--<button class="btn" [ngClass]="{'btn-selected':year==selectdYear}">{{year}}</button>-->
-<!--</span>-->
-<!--</div>-->
-<!--</div>-->
-<!--<div class="program-container col-md-10">-->
-<!--<div class="row">-->
-<!--<div *ngFor="let program of programs" class="col-md-3">-->
-<!--<app-program-card [program]="program"></app-program-card>-->
-<!--</div>-->
-<!--</div>-->
-
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
-
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-12">
-      <h1 style="font-weight: 700">SpaceX Launch Programs</h1>
+      <h1 class='header'>SpaceX Launch Programs</h1>
     </div>
   </div>
   <div class="row content-container">
-    <div class="col-md-2 col-sm-3 col-12 filter-container" style="background: #fff">
+    <div class="col-md-2 col-sm-3 col-12 filter-container">
       <app-filter></app-filter>
     </div>
     <div class="col-md-10 col-sm-9">

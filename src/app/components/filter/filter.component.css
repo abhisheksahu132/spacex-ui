@@ -1,0 +1,18 @@
+.btn-selected {
+  background-color: #7cb900 !important;
+}
+
+.btn {
+  background-color: #c6de9d;
+  margin: 10px 0px;
+}
+
+.filter {
+  text-align: center;
+}
+
+.filter-header {
+  width: 70%;
+  margin: auto;
+  border-bottom: 1px solid #000;
+}

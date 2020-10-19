@@ -1,0 +1,11 @@
+.header{
+    font-weight: 700px;;
+}
+.content-container {
+    padding: 0 15px;
+}
+
+.filter-container{
+    background-color: #fff;
+    margin-bottom: 15px;
+}
