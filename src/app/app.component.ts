@@ -1,29 +1,33 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { DataService } from './service/data.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { skip } from 'rxjs/internal/operators';
+import { skip, debounceTime } from 'rxjs/internal/operators';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'spacex-ui';
-  public programs;
+  public programs: any = [];
+  public isLoding = true;
   constructor(private dataService: DataService, private router: Router, private route: ActivatedRoute) {
-    this.subscribeToFilter();
+    this.subscribeToQueryParam();
   }
 
-  subscribeToFilter() {
-    this.dataService.appliedFilter$.pipe(skip(1)).subscribe(filter => {
-      //this.router.navigate(['/'], { queryParams: { filter: JSON.stringify(filter) } });
-    });
-    this.route.queryParams.subscribe(async (params) => {
+  async ngOnInit() {
+
+  };
+  subscribeToQueryParam() {
+    this.route.queryParams.pipe(debounceTime(200)).subscribe(async (params) => {
       if (params['filter']) {
         this.dataService.appliedFilter$.next(JSON.parse(params['filter']));
       }
+      this.isLoding = true;
       this.programs = await this.dataService.fetchProgram();
+      this.isLoding = false;
     });
   }
 }

@@ -30,15 +30,15 @@
     </div>
   </div>
   <div class="row content-container">
-    <div class="col-md-2 col-12 filter-container" style="background: #fff">
+    <div class="col-md-2 col-sm-3 col-12 filter-container" style="background: #fff">
       <app-filter></app-filter>
     </div>
-    <div class="col-md-10">
+    <div class="col-md-10 col-sm-9">
       <div class="row">
-        <div class="col-md-3" *ngFor="let program of programs">
+        <div class="col-md-3 col-sm-6 col-12 " *ngFor="let program of programs">
           <app-program-card [program]="program"></app-program-card>
         </div>
-        <h5 class="m-auto" *ngIf="programs.length==0">Oop's Couldn't found any program</h5>
+        <h5 class="m-auto" *ngIf="programs.length==0 && !isLoding">Oop's Couldn't found any program</h5>
       </div>
     </div>
   </div>
